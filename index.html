@@ -1,0 +1,68 @@
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	<link rel="stylesheet" type="text/css" href="css/global.css"/>
+	<link rel="stylesheet" type="text/css" href="css/pannellum.css"/>
+
+	<title>Hello World</title>
+</head>
+<body>
+	<!-- <iframe width="800" height="600" webkitAllowFullScreen mozallowfullscreen allowFullScreen style="border-style:none;" src="pannellum.htm?config=config.json"></iframe>-->
+	<div id="panorama-image"></div>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="js/pannellum.js"></script>
+	<script src="js/libpannellum.js"></script>
+
+	<script>
+		pannellum.viewer('panorama-image', {
+			"type": "multires",
+			"autoLoad": true,
+			"hotSpotDebug": true, // getting coordinates
+
+			"multiRes": {
+        "path": "images/squamish_256/%l/%s%y_%x",
+        "fallbackPath": "/fallback/%s",
+        "extension": "jpg",
+        //"tileResolution": 512,
+        "maxLevel": 2,
+        //"cubeResolution": 3288,
+      },
+
+      "hotSpots": [
+						{
+							"pitch": 0,
+							"yaw": -82,
+							"type": "info",
+							"text": "These cliffs are made of sandstone rock. The sandstone here has a different texture to sandstone elsewhere in Stanley Park. Its blocky texture (rather than smooth) is the result of magma infusing the area and “baking” the minerals within the sandstone.",
+						},
+
+						{
+							"pitch": 0,
+							"yaw": -30,
+							"type": "info",
+							"text": "Sedimentary rocks include many different types of minerals. Look closely for the rusty red patches that contain Iron-rich minerals. The rust colour appears when minerals in the rock react with oxygen in groundwater.",
+						},
+
+						{
+							"pitch": 23.13144,
+							"yaw": -155.524093065,
+							"type": "info",
+							"text": "How do sedimentary and igneous rock interact over time? Siwash Rock (Slhx̱i7lsh in Skwxwú7mesh Snichim, the language of the Squamish Nation) is a great example. It formed 32 million years ago when molten magma squeezed into the softer sandstone and mudstone rocks of the area. The magma slowly cooled into a hard sheet of basalt (a volcanic, igneous rock) called a dyke. Over time, the surrounding softer, sedimentary rock has worn away, leaving the hard monolith of Siwash Rock.",
+						},
+
+						{
+							"pitch": 29,
+							"yaw": -130,
+							"type": "scene",
+							"text": "To Squamish",
+							"URL": "?scene=squamish"
+						},
+					]
+		});
+	</script>
+</body>
+</html>
